@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/util/Constants.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -36,7 +37,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),),
                           SizedBox(height: 20,),
                         RaisedButton(onPressed: (){
-                          Navigator.pushNamed(context, "/home");
+
+                          Constants.prefs.setBool("loggedIn", true);
+                          Navigator.pushReplacementNamed(context, "/home");
+                          
                         }, child: Text("Sign in", style: TextStyle(
                           fontSize: 16,
                         ),), textColor: Colors.white, color: Colors.blueAccent)

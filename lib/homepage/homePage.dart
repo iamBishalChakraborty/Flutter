@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/drawer.dart';
 import 'package:flutter_learn/homepage/changeNameCard.dart';
+import 'package:flutter_learn/util/Constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -39,6 +40,12 @@ class _HomePageState extends State < HomePage > {
       backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: Text('My New Application'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.exit_to_app), onPressed: (){
+            Constants.prefs.setBool("loggedIn", false);
+            Navigator.pushReplacementNamed(context, "/login");
+          })
+        ],
       ),
       body: Container(
         child: Padding(
