@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State < HomePage > {
 
-  TextEditingController _textEditingController = TextEditingController();
+   TextEditingController _textEditingController = TextEditingController();
   var myText = "Change Me";
   var url = "https://jsonplaceholder.typicode.com/photos";
   var data;
@@ -66,4 +66,5 @@ class _HomePageState extends State < HomePage > {
     );
   }
 }
+
 
